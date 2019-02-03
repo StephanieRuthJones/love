@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css'
+
 import Header from './components/Header'
 import Questions from './components/Questions'
 import Response from './components/Response'
@@ -9,6 +10,7 @@ import ResponseEdit from './components/ResponseEdit'
 import ResponseDelete from './components/ResponseDelete'
 import PreviousButton from './components/PreviousButton'
 import NextButton from './components/NextButton'
+import Footer from './components/Footer'
 
 class App extends Component {
   constructor(props) {
@@ -60,24 +62,30 @@ class App extends Component {
     return (
 
       <div className="container justify-content-center">
-        <Header />
-        <BrowserRouter>
-          <div className="justify-content-center">
 
-            <Route path="/" exact render={() => <Questions
-              number={this.state.number}
-              question={this.state.question} />} />
-            <Route path="/response/new" exact component={Response} />
-            <Route path="/response/edit" exact component={ResponseEdit} />
-            <Route path="/response/delete" exact component={ResponseDelete} />
+        <BrowserRouter>
+          <div>
+            <div className="justify-content-center">
+              <Header />
+              <Route path="/" exact render={() => <Questions
+                number={this.state.number}
+                question={this.state.question} />} />
+              <Route path="/response/new" exact component={Response} />
+              <Route path="/response/edit" exact component={ResponseEdit} />
+              <Route path="/response/delete" exact component={ResponseDelete} />
+            </div>
+            <div className="row buttons justify-content-center">
+              <PreviousButton
+                nextQuestion={this.nextQuestion} />
+              <NextButton
+                nextQuestion={this.nextQuestion} />
+            </div>
+            <div>
+              <Footer />
+            </div>
           </div>
         </BrowserRouter>
-        <div className="row buttons justify-content-center">
-          <PreviousButton
-            nextQuestion={this.nextQuestion} />
-          <NextButton
-            nextQuestion={this.nextQuestion} />
-        </div>
+
       </div >
 
     );
