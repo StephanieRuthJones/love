@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 const PreviousButton = (props) => {
     console.log(props)
     return (
-        <Button className="btn" type="button" onClick={() => props.nextQuestion(false)}>Previous</Button>
+        <Button className="btn btn-primary" type="button" onClick={() => props.nextQuestion(false)}>Previous</Button>
     )
 }
 

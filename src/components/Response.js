@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Response = () => {
-    return <div>ResponseEdit</div>
+    return <div>Response</div>
 }
 
 export default Response

@@ -5,7 +5,7 @@ const PreviousButton = (props) => {
     console.log(props)
     return (
 
-        <Button className="btn" type="button" onClick={() => props.nextQuestion(true)}>Next</Button>
+        <Button className="btn btn-primary" type="button" onClick={() => props.nextQuestion(true)}>Next</Button>
     )
 }
 

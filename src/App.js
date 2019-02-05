@@ -62,31 +62,27 @@ class App extends Component {
     return (
 
       <div className="container justify-content-center">
-
         <BrowserRouter>
           <div>
+            <Header />
             <div className="justify-content-center">
-              <Header />
               <Route path="/" exact render={() => <Questions
                 number={this.state.number}
                 question={this.state.question} />} />
               <Route path="/response/new" exact component={Response} />
               <Route path="/response/edit" exact component={ResponseEdit} />
               <Route path="/response/delete" exact component={ResponseDelete} />
+              <div className="row justify-content-center">
+                <PreviousButton
+                  nextQuestion={this.nextQuestion} />
+                <NextButton
+                  nextQuestion={this.nextQuestion} />
+              </div>
             </div>
-            <div className="row buttons justify-content-center">
-              <PreviousButton
-                nextQuestion={this.nextQuestion} />
-              <NextButton
-                nextQuestion={this.nextQuestion} />
-            </div>
-            <div>
-              <Footer />
-            </div>
+            <Footer />
           </div>
         </BrowserRouter>
-
-      </div >
+      </div>
 
     );
   }

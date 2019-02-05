@@ -1,10 +1,19 @@
 .App {
   text-align: center;
+  
+}
+
+.container {
+background: #EF476F;
 }
 
 .header {
-  background: #F8E5E5;
-  color: #000000;
+  background: #EF476F;
+  justify-content: center;
+}
+
+.navbar.navbar-expand-lg.navbar-light a {
+  color: #FCFCFC;
 }
 
 
@@ -12,15 +21,34 @@
   margin: 10px;
 }
 
-.btn {
+.btn.btn-primary {
   height: 50px;
-  width: 200px;
-  margin: 10px;
+  width: 100px;
+  margin: 20px;
+  background-color: #FFD166;
+  border: #26547C;
+}
+
+.card {
+  width: 500px;
+  height: 150px;
+}
+
+.card-body {
+  background: #06D6A0;
+}
+
+.card-title{
+  color: #FCFCFC;
+}
+
+.card-subtitle {
+  color: #FCFCFC;
 }
 
 .footer {
-  background: #F8E5E5;
-  color: #000000;
+  background: #EF476F;
+  color: #FCFCFC;
   font-size: 10px;
   height: 50px;
   padding: 10px;
