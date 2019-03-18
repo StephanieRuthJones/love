@@ -10,14 +10,14 @@ import ResponseEdit from './components/ResponseEdit'
 import ResponseDelete from './components/ResponseDelete'
 import PreviousButton from './components/PreviousButton'
 import NextButton from './components/NextButton'
-import Footer from './components/Footer'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       questions: [],
-      currentIndex: 1
+      currentIndex: 1,
+      // showForm: false,
     }
   }
 
@@ -27,7 +27,6 @@ class App extends Component {
     this.setState({ questions: json })
     this.nextQuestion()
   }
-  //ternary for card vs loading bc loading delay for backend
 
   getRandomIntInclusive = (max) => {
     const min = 0
@@ -58,13 +57,21 @@ class App extends Component {
     })
   }
 
+  // showCommentForm = () => {
+  //   let showState = !this.state.showForm
+  //   console.log(showState)
+  //   this.setState({
+  //     showForm: showState
+  //   })
+  // }
+
   render() {
     return (
 
       <div className="container justify-content-center">
         <BrowserRouter>
           <div>
-            <Header />
+            <Header showForm={this.state.showForm} />
             <div className="justify-content-center">
               <Route path="/" exact render={() => <Questions
                 number={this.state.number}
@@ -79,7 +86,7 @@ class App extends Component {
                   nextQuestion={this.nextQuestion} />
               </div>
             </div>
-            <Footer />
+            <Response showCommentForm={this.showCommentForm} />
           </div>
         </BrowserRouter>
       </div>

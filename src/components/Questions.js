@@ -4,7 +4,7 @@ import React from 'react'
 const Questions = (props) => {
     console.log(props)
     return (
-        <div className="row">
+        <div className="row justify-content-center">
             <div className="card">
                 <div className="card-body">
 
